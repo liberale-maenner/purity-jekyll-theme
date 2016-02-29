@@ -1,0 +1,18 @@
+@import "partials/site-footer";
+
+// TODO: Verify / Calculate
+$site-footer-height: 30;
+$site-footer-height-small-screen: 15;
+
+.site-footer {
+  position: fixed;
+  height: $site-footer-height + px;
+
+  @include media(small) {
+    height: $site-footer-height-small-screen + px;
+  }
+}
+
+$site-footer-vspace: $site-footer-height + $site-footer-border-height;
+$site-footer-vspace-small-screen: $site-footer-height-small-screen + $site-footer-border-height;
+$site-footer-vspace-medium-screen: $site-footer-height-small-screen + $site-footer-border-height;

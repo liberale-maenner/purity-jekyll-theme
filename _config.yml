@@ -1,0 +1,93 @@
+# Purity Jekyll Theme
+#=====================
+
+## Plugin Configurations
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+sass:
+  style: compressed
+
+
+## Globals
+
+url:     http://saswatpadhi.github.io
+baseurl: /purity-jekyll-theme
+
+title:    Purity
+tagline:  A clean, simple theme for Jekyll
+timezone: America/Los_Angeles
+
+author:
+  name: Saswat Padhi
+  link: http://saswatpadhi.github.io
+
+github:
+  user: SaswatPadhi
+  repo: purity-jekyll-theme
+
+
+## Theme and Layout
+
+# Defaults:
+# ---------
+# theme:
+#   hover_light: enabled
+#
+# fonts:
+#   base: Noto Sans
+#   head: Montserrat
+#   mono: Ubuntu Mono
+#
+# layout:
+#   header:
+#     enabled: true
+#     scroll: false
+#   footer:
+#     enabled: true
+#     scroll: false
+#   sidebar:
+#     enabled: true
+#     side: right
+
+layout:
+  sidebar:
+    side: right
+
+menu:
+  Test Pages:
+    code_test:
+      local: tests/code.md
+    headings_test:
+      local: tests/headings.md
+  Links:
+    github:
+      url: https://github.com
+      title: GitHub
+      icon: github
+    bitbucket:
+      url: https://bitbucket.com
+      title: BitBucket
+      icon: bitbucket
+    split_1:
+      type: spacer
+    google:
+      url: https://google.com
+      title: Google
+      icon: google
+    microsoft:
+      url: https://microsoft.com
+      title: Microsoft
+      icon: windows
+    split_2:
+      type: separator
+    html5:
+      url: https://en.wikipedia.org/wiki/HTML5
+      title: HTML5 [Wikipedia]
+      icon: html5
+    css:
+      url: https://en.wikipedia.org/wiki/Cascading_Style_Sheets
+      title: CSS [Wikipedia]
+      icon: css3

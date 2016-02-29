@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  {% include head.html %}
+  <body>
+    <div class='layout'>
+      {% include sections/header.html %}
+
+      <div class='pure-g site-main'>
+        {% assign site-sidebar-side = site.layout.sidebar.side | default: 'left' %}
+        {% if site-sidebar-side == 'left' %}
+          {% include sections/sidebar.html %}
+        {% endif %}
+
+        <div class='pure-u-1 site-container'>
+          {{ content }}
+        </div>
+
+        {% if site-sidebar-side == 'right' %}
+          {% include sections/sidebar.html %}
+        {% endif %}
+
+      </div>
+
+      {% include sections/footer.html %}
+    </div>
+  </body>
+</html>

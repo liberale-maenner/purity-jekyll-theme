@@ -1,0 +1,17 @@
+.layout {
+  width: 100%;
+  margin: 0px auto;
+  max-width: $site-max-width + px;
+}
+
+.site-main {
+  margin: ($site-header-vspace + px) auto ($site-footer-vspace + px) auto;
+
+  @include media(small) {
+    margin: ($site-header-vspace-small-screen + px) auto ($site-footer-vspace-small-screen + px) auto;
+  }
+
+  @include media(medium) {
+    margin: ($site-header-vspace-medium-screen + px) auto ($site-footer-vspace-medium-screen + px) auto;
+  }
+}

@@ -1,0 +1,38 @@
+/* https://coolors.co/003172-0b9183-b50015-cc7700-fdfffc */
+
+$background-color: #fffffc;
+$foreground-color: #2B4162;
+$highlight-color: #2982A0;
+$hyperlink-color: #0B6E4F;
+$accent-color: #A52624;
+
+body {
+  background-color: $background-color;
+  color: $foreground-color;
+}
+
+#{headings()} {
+  @include set_color_and_hover($foreground-color);
+}
+
+a {
+  @include set_color_and_hover($hyperlink-color);
+}
+
+$faded-color-amount: 0.25;
+
+.faded-foreground {
+  color: fade-out($foreground-color, $faded-color-amount);
+}
+
+.faded-highlight {
+  color: fade-out($highlight-color, $faded-color-amount);
+}
+
+.faded-hyperlink {
+  color: fade-out($hyperlink-color, $faded-color-amount);
+}
+
+.faded-accent {
+  color: fade-out($accent-color, $faded-color-amount);
+}

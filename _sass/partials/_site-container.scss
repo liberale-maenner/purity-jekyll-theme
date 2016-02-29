@@ -1,0 +1,29 @@
+.site-container {
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 12px;
+
+  a {
+    border-bottom: thin dashed;
+  }
+
+  li {
+    margin: 4px auto;
+  }
+
+  @if $site-sidebar-side == right {
+    margin-right: 12px;
+  }
+  @else {
+    margin-left: 12px;
+  }
+
+  @include media(medium) {
+    @if $site-sidebar-side == right {
+      margin-right: $site-sidebar-width + $site-sidebar-border-width + 12 + px;
+    }
+    @else {
+      margin-left: $site-sidebar-width + $site-sidebar-border-width + 12 + px;
+    }
+  }
+}

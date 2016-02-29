@@ -1,0 +1,69 @@
+@import "partials/menu";
+
+$site-sidebar-width: 250;
+$site-sidebar-border-width: $site-border-thickness;
+
+.site-sidebar {
+  right: 0px;
+  padding: 4px;
+  position: fixed;
+  margin: 0px;
+  background-color: $background-color;
+  border-radius: 0px 0px 0px 12px;
+  border-left: $site-sidebar-border-width+px solid $highlight-color;
+  border-bottom: $site-sidebar-border-width+px solid $highlight-color;
+  text-align: center;
+
+  .sidebar-note {
+    font-size: 0.7rem;
+  }
+
+  @include media(medium) {
+    right: auto;
+    border: none;
+    border-radius: 0px;
+
+    @if $site-sidebar-side == "right" {
+      margin-left: -$site-sidebar-width - $site-sidebar-border-width + px;
+
+      border-left: $site-sidebar-border-width+px solid $highlight-color;
+    }
+    @else {
+      border-right: $site-sidebar-border-width+px solid $highlight-color;
+    }
+
+    padding: 0px;
+    width: $site-sidebar-width + px;
+  }
+}
+
+.site-sidebar {
+  .reveal-sidebar {
+    @include set_color_and_hover($accent-color, color);
+
+    color: $accent-color;
+    display: block;
+  }
+
+  .sidebar-contents {
+    display: none;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox]:checked ~ .sidebar-contents {
+    display: block;
+  }
+
+  @include media(medium) {
+    .reveal-sidebar {
+      display: none;
+    }
+
+    .sidebar-contents {
+      display: block;
+    }
+  }
+}

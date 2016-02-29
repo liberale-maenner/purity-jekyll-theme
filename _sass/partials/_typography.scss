@@ -1,0 +1,77 @@
+html {
+  font-size: 18px;
+}
+
+html, button, input, select, textarea,
+.pure-g [class*="pure-u"] {
+  font-family: $base-font-stack;
+}
+
+#{headings()} {
+  margin: 1rem 0rem 0rem 0rem;
+  font-family: $head-font-stack;
+  font-weight: bold;
+}
+
+$head-font-ratio: 0.9;
+$head-font-size: 2;
+
+// TODO: A cleaner way to do this?
+@for $i from 1 through 6 {
+  $head-font-size: $head-font-size * $head-font-ratio;
+
+  h#{$i} {
+    font-size: $head-font-size + rem;
+  }
+}
+
+code, kbd, pre, samp {
+  font-family: $mono-font-stack;
+}
+
+a {
+  text-decoration: none;
+  font-family: $head-font-stack;
+}
+
+.page-icon {
+  padding: 2px 0px;
+  color: $background-color;
+  background-color: $foreground-color;
+}
+
+.text-align-left-sm {
+  text-align: center;
+
+  @include media(small) {
+    text-align: left;
+  }
+}
+
+.text-align-right-sm {
+  text-align: center;
+
+  @include media(small) {
+    text-align: right;
+  }
+}
+
+.text-align-left-md {
+  text-align: center;
+
+  @include media(medium) {
+    text-align: left;
+  }
+}
+
+.text-align-right-md {
+  text-align: center;
+
+  @include media(medium) {
+    text-align: right;
+  }
+}
+
+.text-align-center {
+  text-align: center;
+}

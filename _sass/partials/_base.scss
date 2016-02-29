@@ -1,0 +1,61 @@
+$site-max-width: 1100;
+$site-border-thickness: 1;
+
+$default-lighten-amount: 15%;
+$default-darken-amount: 15%;
+
+@function headings($from: 1, $to: 6) {
+  @if $from == $to {
+    @return "h#{$from}";
+  }
+  @else {
+    @return "h#{$from}," + headings($from + 1, $to);
+  }
+}
+
+@mixin set_color_and_hover($color, $color-attrib: color, $factor: $default-lighten-amount) {
+  #{$color-attrib}: $color;
+
+  @if $site-hover-light == enabled {
+    transition: $color-attrib 0.2s ease;
+
+    &:hover, &:focus {
+      #{$color-attrib}: lighten($color, $factor);
+    }
+  }
+}
+
+@mixin media($size: small) {
+  @if $size == small {
+    @media screen and (min-width: 35.5em) {
+      @content;
+    }
+  }
+  @else if $size == medium {
+    @media screen and (min-width: 48em) {
+      @content;
+    }
+  }
+  @else if $size == large {
+    @media screen and (min-width: 64em) {
+      @content;
+    }
+  }
+  @else if $size == xlarge {
+    @media screen and (min-width: 80em) {
+      @content;
+    }
+  }
+}
+
+/* Initializations */
+
+$site-sidebar-width: 0;
+$site-sidebar-border-width: 0;
+
+$site-header-vspace: 0;
+$site-header-vspace-small-screen: 0;
+$site-header-vspace-medium-screen: 0;
+$site-footer-vspace: 0;
+$site-footer-vspace-small-screen: 0;
+$site-footer-vspace-medium-screen: 0;

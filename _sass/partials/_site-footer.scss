@@ -1,0 +1,14 @@
+$site-footer-border-height: $site-border-thickness;
+
+.site-footer {
+  background-color: $background-color;
+  bottom: 0px;
+  font-size: 0.7rem;
+  max-width: inherit;
+  padding-top: 1px;
+  width: 100%;
+
+  // TODO: Cross-browser support
+  border-width: ($site-footer-border-height + px) 0 0 0;
+  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), $highlight-color, rgba(0, 0, 0, 0)) 100% 0 0 0 stretch;
+}

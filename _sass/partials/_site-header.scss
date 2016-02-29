@@ -1,0 +1,31 @@
+$site-header-border-height: $site-border-thickness;
+
+.site-header {
+  top: 0px;
+  width: 100%;
+  max-width: inherit;
+  background-color: $background-color;
+  border-bottom: ($site-header-border-height + px) solid $highlight-color;
+
+  .site-header-title, .site-header-links {
+    font: bold 2rem $head-font-stack;
+    margin: auto 0px;
+  }
+
+  .site-header-title {
+    @include set_color_and_hover($highlight-color);
+
+    font-size: 2.75rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .site-header-subtitle {
+    @include set_color_and_hover($highlight-color);
+
+    font: 1rem $base-font-stack;
+  }
+}
