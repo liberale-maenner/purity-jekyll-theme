@@ -1,4 +1,4 @@
-.tooltip {
+.tooltip, .tooltip-down {
   display: inline;
   position: relative;
 }
@@ -24,6 +24,33 @@
   border-color: fade-out($foreground-color, 0.1) transparent;
   border-width: 6px 6px 0 6px;
   bottom: 20px;
+  content: "";
+  left: 50%;
+  position: absolute;
+  z-index: 999;
+}
+
+.tooltip-down:hover:after {
+  background: fade-out($foreground-color, 0.1);
+  border-radius: 5px;
+  top: 46px;
+  color: $background-color;
+  content: attr(data);
+  font: 0.8rem $head-font-stack;
+  left: -25%;
+  padding: 5px 15px;
+  position: absolute;
+  text-align: left;
+  width: 250px;
+  word-wrap: break-word;
+  z-index: 998;
+}
+
+.tooltip-down:hover:before {
+  border: solid;
+  border-color: fade-out($foreground-color, 0.1) transparent;
+  border-width: 0 6px 6px 6px;
+  top: 40px;
   content: "";
   left: 50%;
   position: absolute;

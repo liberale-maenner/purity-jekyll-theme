@@ -5,6 +5,7 @@
 }
 
 .site-main {
+  z-index: 0;
   margin: ($site-header-vspace + px) auto ($site-footer-vspace + px) auto;
 
   @include media(small) {

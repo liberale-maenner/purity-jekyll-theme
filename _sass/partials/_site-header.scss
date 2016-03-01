@@ -3,6 +3,7 @@ $site-header-border-height: $site-border-thickness;
 .site-header {
   top: 0px;
   width: 100%;
+  z-index: 1;
   max-width: inherit;
   background-color: $background-color;
   border-bottom: ($site-header-border-height + px) solid $highlight-color;

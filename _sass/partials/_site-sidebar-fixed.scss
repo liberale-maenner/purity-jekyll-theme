@@ -10,8 +10,8 @@ $site-sidebar-border-width: $site-border-thickness;
   margin: 0px;
   background-color: $background-color;
   border-radius: 0px 0px 0px 12px;
-  border-left: $site-sidebar-border-width+px solid $highlight-color;
-  border-bottom: $site-sidebar-border-width+px solid $highlight-color;
+  border-left: ($site-sidebar-border-width + px) solid $highlight-color;
+  border-bottom: ($site-sidebar-border-width + px) solid $highlight-color;
   text-align: center;
 
   .sidebar-note {
@@ -25,11 +25,12 @@ $site-sidebar-border-width: $site-border-thickness;
 
     @if $site-sidebar-side == "right" {
       margin-left: -$site-sidebar-width - $site-sidebar-border-width + px;
-
-      border-left: $site-sidebar-border-width+px solid $highlight-color;
+      border-width: 0 0 0 ($site-sidebar-border-width + px);
+      border-image: linear-gradient(to top, rgba(0, 0, 0, 0), $highlight-color 50%) 0 0 0 100% stretch;
     }
     @else {
-      border-right: $site-sidebar-border-width+px solid $highlight-color;
+      border-width: 0 ($site-sidebar-border-width + px) 0 0;
+      border-image: linear-gradient(to top, rgba(0, 0, 0, 0), $highlight-color 50%) 0 100% 0 0 stretch;
     }
 
     padding: 0px;

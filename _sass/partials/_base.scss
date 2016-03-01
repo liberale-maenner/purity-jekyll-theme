@@ -1,8 +1,9 @@
 $site-max-width: 1100;
 $site-border-thickness: 1;
 
-$default-lighten-amount: 15%;
-$default-darken-amount: 15%;
+$default-color-delta-amount: 15%;
+$default-large-color-delta-amount: 25%;
+$default-slight-color-delta-amount: 2.5%;
 
 @function headings($from: 1, $to: 6) {
   @if $from == $to {
@@ -13,7 +14,7 @@ $default-darken-amount: 15%;
   }
 }
 
-@mixin set_color_and_hover($color, $color-attrib: color, $factor: $default-lighten-amount) {
+@mixin set_color_and_hover($color, $color-attrib: color, $factor: $default-color-delta-amount) {
   #{$color-attrib}: $color;
 
   @if $site-hover-light == enabled {

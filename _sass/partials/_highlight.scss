@@ -1,5 +1,5 @@
 .highlighter-rouge {
-  @include set_color_and_hover(darken($background-color, 2.5%), background-color);
+  @include set_color_and_hover(darken($background-color, $default-slight-color-delta-amount), background-color);
 
   color: #586e75;
 

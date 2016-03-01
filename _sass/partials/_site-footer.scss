@@ -7,6 +7,7 @@ $site-footer-border-height: $site-border-thickness;
   max-width: inherit;
   padding-top: 1px;
   width: 100%;
+  z-index: 1;
 
   // TODO: Cross-browser support
   border-width: ($site-footer-border-height + px) 0 0 0;
