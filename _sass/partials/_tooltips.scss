@@ -1,58 +1,57 @@
-.tooltip, .tooltip-down {
-  display: inline;
-  position: relative;
-}
+@if $site-tooltips == enabled {
+  .tooltip, .tooltip-down, .tooltip-img-down {
+    display: inline;
+    position: relative;
+  }
 
-.tooltip:hover:after {
-  background: fade-out($foreground-color, 0.1);
-  border-radius: 5px;
-  bottom: 26px;
-  color: $background-color;
-  content: attr(data);
-  font: 0.8rem $head-font-stack;
-  left: -25%;
-  padding: 5px 15px;
-  position: absolute;
-  text-align: left;
-  width: 250px;
-  word-wrap: break-word;
-  z-index: 998;
-}
+  .tooltip:hover:after, .tooltip-down:hover:after, .tooltip-img-down:hover:after {
+    background: fade-out($foreground-color, 0.1);
+    border-radius: 5px;
+    color: $background-color;
+    content: attr(data);
+    font: 0.8rem $head-font-stack;
+    left: -25%;
+    padding: 5px 10px;
+    position: absolute;
+    text-align: left;
+    width: 225px;
+    word-wrap: break-word;
+    z-index: 998;
+  }
 
-.tooltip:hover:before {
-  border: solid;
-  border-color: fade-out($foreground-color, 0.1) transparent;
-  border-width: 6px 6px 0 6px;
-  bottom: 20px;
-  content: "";
-  left: 50%;
-  position: absolute;
-  z-index: 999;
-}
+  .tooltip:hover:after {
+    bottom: 26px;
+  }
 
-.tooltip-down:hover:after {
-  background: fade-out($foreground-color, 0.1);
-  border-radius: 5px;
-  top: 46px;
-  color: $background-color;
-  content: attr(data);
-  font: 0.8rem $head-font-stack;
-  left: -25%;
-  padding: 5px 15px;
-  position: absolute;
-  text-align: left;
-  width: 250px;
-  word-wrap: break-word;
-  z-index: 998;
-}
+  .tooltip-down:hover:after {
+    top: 46px;
+  }
 
-.tooltip-down:hover:before {
-  border: solid;
-  border-color: fade-out($foreground-color, 0.1) transparent;
-  border-width: 0 6px 6px 6px;
-  top: 40px;
-  content: "";
-  left: 50%;
-  position: absolute;
-  z-index: 999;
+  .tooltip-img-down:hover:after {
+    top: 26px;
+  }
+
+  .tooltip:hover:before, .tooltip-down:hover:before, .tooltip-img-down:hover:before {
+    border: solid;
+    border-color: fade-out($foreground-color, 0.1) transparent;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 999;
+  }
+
+  .tooltip:hover:before {
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+  }
+
+  .tooltip-down:hover:before {
+    border-width: 0px 6px 6px 6px;
+    top: 40px;
+  }
+
+  .tooltip-img-down:hover:before {
+    border-width: 0px 6px 6px 6px;
+    top: 20px;
+  }
 }

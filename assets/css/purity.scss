@@ -16,6 +16,7 @@ $base-font-stack: '{{ base_font }}', sans-serif;
 
 /* Pass information from Jekyll to SASS */
 
+$site-tooltips: {{ site.theme.tooltips | default: 'enabled' }};
 $site-hover-light: {{ site.theme.hover_light | default: 'enabled' }};
 $site-sidebar-side: {{ site.layout.sidebar.side | default: 'left' }};
 
@@ -42,4 +43,4 @@ $site-sidebar-side: {{ site.layout.sidebar.side | default: 'left' }};
 {% endfor %}
 
 @import 'partials/site-container';
-@import 'partials/full-layout';
+@import 'partials/layout';

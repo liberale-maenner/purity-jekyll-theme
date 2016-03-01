@@ -12,7 +12,14 @@
     margin: ($site-header-vspace-small-screen + px) auto ($site-footer-vspace-small-screen + px) auto;
   }
 
+
   @include media(medium) {
     margin: ($site-header-vspace-medium-screen + px) auto ($site-footer-vspace-medium-screen + px) auto;
   }
+}
+
+img {
+  margin: 0.25rem;
+  border-radius: 0.5em;
+  border: ($site-border-thickness + px) solid $highlight-color;
 }

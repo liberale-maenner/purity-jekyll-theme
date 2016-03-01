@@ -21,8 +21,12 @@ tagline:  A clean, simple theme for Jekyll
 timezone: America/Los_Angeles
 
 author:
-  name: Saswat Padhi
-  link: http://saswatpadhi.github.io
+  name:     Saswat Padhi
+  link:     http://saswatpadhi.github.io
+  photo:
+    alt:    Avatar from GitHub
+    remote: https://avatars3.githubusercontent.com/u/1577944
+#    local: assets/img/photo.jpg
 
 github:
   user: SaswatPadhi
@@ -34,6 +38,7 @@ github:
 # Defaults:
 # ---------
 # theme:
+#   tooltips:    enabled
 #   hover_light: enabled
 #
 # fonts:
@@ -44,13 +49,13 @@ github:
 # layout:
 #   header:
 #     enabled: true
-#     scroll: false
+#     scroll:  false
 #   footer:
 #     enabled: true
-#     scroll: false
+#     scroll:  false
 #   sidebar:
 #     enabled: true
-#     side: right
+#     side:    left
 
 layout:
   sidebar:
@@ -64,30 +69,30 @@ menu:
       local: tests/headings.md
   Links:
     github:
-      url: https://github.com
+      url:   https://github.com
       title: GitHub
-      icon: github
+      icon:  github
     bitbucket:
-      url: https://bitbucket.com
+      url:   https://bitbucket.com
       title: BitBucket
-      icon: bitbucket
+      icon:  bitbucket
     split_1:
       type: spacer
     google:
-      url: https://google.com
+      url:   https://google.com
       title: Google
-      icon: google
+      icon:  google
     microsoft:
-      url: https://microsoft.com
+      url:   https://microsoft.com
       title: Microsoft
-      icon: windows
+      icon:  windows
     split_2:
       type: separator
     html5:
-      url: https://en.wikipedia.org/wiki/HTML5
+      url:   https://en.wikipedia.org/wiki/HTML5
       title: HTML5 [Wikipedia]
-      icon: html5
+      icon:  html5
     css:
-      url: https://en.wikipedia.org/wiki/Cascading_Style_Sheets
+      url:   https://en.wikipedia.org/wiki/Cascading_Style_Sheets
       title: CSS [Wikipedia]
-      icon: css3
+      icon:  css3
