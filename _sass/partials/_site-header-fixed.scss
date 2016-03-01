@@ -1,18 +1,25 @@
+/* Vars-Required-From:
+ *   . { site-header }
+ *
+ * Vars-Set-From:
+ *   Nil
+ */
+
 @import "partials/site-header";
 
 // TODO: Verify / Calculate
-$site-header-height: 130;
-$site-header-height-medium-screen: 84;
+$header-height: 102;
+$header-height-medium-screen: 84;
 
 .site-header {
   position: fixed;
-  height: $site-header-height + px;
+  height: $header-height + px;
 
   @include media(medium) {
-    height: $site-header-height-medium-screen + px;
+    height: $header-height-medium-screen + px;
   }
 }
 
-$site-header-vspace: $site-header-height + $site-header-border-height;
-$site-header-vspace-small-screen: $site-header-height + $site-header-border-height;
-$site-header-vspace-medium-screen: $site-header-height-medium-screen + $site-header-border-height;
+$site-header-vspace: $header-height + $header-border-height;
+$site-header-vspace-small-screen: $header-height + $header-border-height;
+$site-header-vspace-medium-screen: $header-height-medium-screen + $header-border-height;

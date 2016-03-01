@@ -9,14 +9,14 @@ Meet [Purity][purity], a clean, blazing-fast, highly configurable theme for
 Why [Purity][purity]?
 
 <div class='pure-g'>
-  <div class='pure-u-1 pure-u-sm-1-3 text-align-right-sm'>
-    {% include utils/font-awesome-stack.html below_text='<b>JS</b>' above='fa-ban faded-accent' %} No JavaScript
+  <div class='pure-u-1 pure-u-sm-1-3 text-align-right-small'>
+    {% include utils/font-awesome-stack.html below_text='<b>JS</b>' above='fa-ban site-color-faded-accent' %} No JavaScript
   </div>
   <div class='pure-u-1 pure-u-sm-1-3 text-align-center'>
     {% include utils/font-awesome-stack.html reverse=true below='fa-circle-thin' above='fa-css3' %} 100% Pure CSS
   </div>
-  <div class='pure-u-1 pure-u-sm-1-3 text-align-left-sm'>
-    {% include utils/font-awesome-stack.html reverse=true below='fa-circle faded-hyperlink' above='fa-bolt fa-inverse' %} Super-light!
+  <div class='pure-u-1 pure-u-sm-1-3 text-align-left-small'>
+    {% include utils/font-awesome-stack.html reverse=true below='fa-circle site-color-faded-hyperlink' above='fa-bolt fa-inverse' %} Super-light!
   </div>
 </div>
 

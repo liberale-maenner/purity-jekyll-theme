@@ -1,23 +1,33 @@
+/* Vars-Required-From:
+ *   . base
+ *   . { menu }
+ *
+ * Vars-Set-From:
+ *   Nil
+ */
+
 @import "partials/menu";
 
-$site-sidebar-width: 250;
-$site-sidebar-hidden-width: 200;
-$site-sidebar-border-width: $site-border-thickness;
+$sidebar-border-width: $default-border-thickness;
+
+$sidebar-width: 250;
+$sidebar-width-hidden: 200;
 
 $sidebar-font-size: 1.05rem;
-$sidebar-hidden-font-size: 0.85rem;
+$sidebar-font-size-hidden: 0.85rem;
 
 .site-sidebar {
-  right: 0px;
+  background-color: $site-color-background;
+  border-radius: 0 0 0 ($default-gap-thick + px);
+  border: none;
+  border-left: ($sidebar-border-width + px) solid $site-color-highlight;
+  border-bottom: ($sidebar-border-width + px) solid $site-color-highlight;
+  font-size: $sidebar-font-size-hidden;
+  margin: 0;
   padding: 4px;
   position: fixed;
-  margin: 0px;
-  background-color: $background-color;
-  border-radius: 0px 0px 0px 12px;
-  border-left: ($site-sidebar-border-width + px) solid $highlight-color;
-  border-bottom: ($site-sidebar-border-width + px) solid $highlight-color;
+  right: 0;
   text-align: center;
-  font-size: $sidebar-hidden-font-size;
 
   .sidebar-author-photo {
     width: 80%;
@@ -28,31 +38,30 @@ $sidebar-hidden-font-size: 0.85rem;
   }
 
   @include media(medium) {
-    right: auto;
     border: none;
-    border-radius: 0px;
+    border-radius: 0;
+    right: auto;
 
     @if $site-sidebar-side == "right" {
-      margin-left: -$site-sidebar-width - $site-sidebar-border-width + px;
-      border-width: 0 0 0 ($site-sidebar-border-width + px);
-      border-image: linear-gradient(to top, rgba(0, 0, 0, 0), $highlight-color 50%) 0 0 0 100% stretch;
+      margin-left: -$sidebar-width - $sidebar-border-width + px;
+      border-width: 0 0 0 ($sidebar-border-width + px);
+      border-image: linear-gradient(to top, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge-amount) 10%) 0 0 0 100% stretch;
     }
     @else {
-      border-width: 0 ($site-sidebar-border-width + px) 0 0;
-      border-image: linear-gradient(to top, rgba(0, 0, 0, 0), $highlight-color 50%) 0 100% 0 0 stretch;
+      border-width: 0 ($sidebar-border-width + px) 0 0;
+      border-image: linear-gradient(to top, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge-amount) 10%) 0 100% 0 0 stretch;
     }
 
-    padding: 0px;
-  font-size: $sidebar-font-size;
-    width: $site-sidebar-width + px;
+    padding: 0;
+    font-size: $sidebar-font-size;
+    width: $sidebar-width + px;
   }
 }
 
 .site-sidebar {
   .reveal-sidebar {
-    @include set_color_and_hover($accent-color, color);
+    @include set_color_and_hover($site-color-accent, color);
 
-    color: $accent-color;
     display: block;
   }
 
@@ -66,7 +75,7 @@ $sidebar-hidden-font-size: 0.85rem;
 
   input[type=checkbox]:checked ~ .sidebar-contents {
     display: block;
-    width: $site-sidebar-hidden-width + px;
+    width: $sidebar-width-hidden + px;
   }
 
   @include media(medium) {
@@ -80,3 +89,6 @@ $sidebar-hidden-font-size: 0.85rem;
     }
   }
 }
+
+$site-sidebar-width: $sidebar-width;
+$site-sidebar-border-width: $sidebar-border-width;

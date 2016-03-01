@@ -4,72 +4,32 @@ html {
 
 html, button, input, select, textarea,
 .pure-g [class*="pure-u"] {
-  font-family: $base-font-stack;
-}
-
-#{headings()} {
-  margin: 1rem 0rem 0rem 0rem;
-  font-family: $head-font-stack;
-  font-weight: bold;
-}
-
-$head-font-ratio: 0.9;
-$head-font-size: 2;
-
-// TODO: A cleaner way to do this?
-@for $i from 1 through 6 {
-  $head-font-size: $head-font-size * $head-font-ratio;
-
-  h#{$i} {
-    font-size: $head-font-size + rem;
-  }
+  font-family: $site-font-stack-base;
 }
 
 code, kbd, pre, samp {
-  font-family: $mono-font-stack;
+  font-family: $site-font-stack-mono;
 }
 
 a {
   text-decoration: none;
-  font-family: $head-font-stack;
+  font-family: $site-font-stack-head;
 }
+
+#{headings()} {
+  margin: 1rem 0 0 0;
+  font-family: $site-font-stack-head;
+  font-weight: bold;
+}
+
+@include set_heading_font_sizes;
+
+@include make_text_align_classes;
 
 .page-icon {
-  padding: 2px 0px;
-  color: $background-color;
-  background-color: $foreground-color;
-}
-
-.text-align-left-sm {
-  text-align: center;
-
-  @include media(small) {
-    text-align: left;
-  }
-}
-
-.text-align-right-sm {
-  text-align: center;
-
-  @include media(small) {
-    text-align: right;
-  }
-}
-
-.text-align-left-md {
-  text-align: center;
-
-  @include media(medium) {
-    text-align: left;
-  }
-}
-
-.text-align-right-md {
-  text-align: center;
-
-  @include media(medium) {
-    text-align: right;
-  }
+  padding: ($default-gap-thin + px) 0;
+  color: $site-color-background;
+  background-color: $site-color-foreground;
 }
 
 .text-align-center {

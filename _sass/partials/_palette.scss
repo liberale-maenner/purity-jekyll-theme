@@ -1,38 +1,27 @@
-/* https://coolors.co/003172-0b9183-b50015-cc7700-fdfffc */
+/* Vars-Required-From:
+ *   Nil
+ *
+ * Vars-Set-Fom:
+ *   Nil
+ */
 
-$background-color: #fffffc;
-$foreground-color: #2B4162;
-$highlight-color: #2982A0;
-$hyperlink-color: #0B6E4F;
-$accent-color: #A52624;
+$site-color-background: #fffffc;
+$site-color-foreground: #2B4162;
+$site-color-highlight: #2982A0;
+$site-color-hyperlink: #0B6E4F;
+$site-color-accent: #A52624;
+
+@include make_site_color_faded($default-color-delta-medium-amount, ((background, $site-color-background), (foreground, $site-color-foreground), (highlight, $site-color-highlight), (hyperlink, $site-color-hyperlink), (accent, $site-color-accent)));
 
 body {
-  background-color: $background-color;
-  color: $foreground-color;
+  background-color: $site-color-background;
+  color: $site-color-foreground;
 }
 
 #{headings()} {
-  @include set_color_and_hover($foreground-color);
+  @include set_color_and_hover($site-color-foreground);
 }
 
 a {
-  @include set_color_and_hover($hyperlink-color);
-}
-
-$faded-color-amount: 0.25;
-
-.faded-foreground {
-  color: fade-out($foreground-color, $faded-color-amount);
-}
-
-.faded-highlight {
-  color: fade-out($highlight-color, $faded-color-amount);
-}
-
-.faded-hyperlink {
-  color: fade-out($hyperlink-color, $faded-color-amount);
-}
-
-.faded-accent {
-  color: fade-out($accent-color, $faded-color-amount);
+  @include set_color_and_hover($site-color-hyperlink);
 }

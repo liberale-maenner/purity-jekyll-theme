@@ -1,32 +1,51 @@
-$site-header-border-height: $site-border-thickness;
+/* Vars-Required-From:
+ *   . base
+ *
+ * Vars-Set-From:
+ *   Nil
+ */
+
+$header-border-height: $default-border-thickness;
+
+$header-font-size: 0.8rem;
+$header-font-size-medium: 1rem;
 
 .site-header {
+  background-color: $site-color-background;
+
+  // TODO: Cross-browser support
+  border-width: 0 0 ($header-border-height + px) 0;
+  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge-amount) 10%, fade-out($site-color-highlight, $default-color-delta-huge-amount) 90%, rgba(0, 0, 0, 0)) 0 0 100% 0 stretch;
+  font-size: $header-font-size;
+  max-width: inherit;
   top: 0px;
   width: 100%;
   z-index: 1;
-  max-width: inherit;
-  background-color: $background-color;
-  border-bottom: ($site-header-border-height + px) solid $highlight-color;
 
-  .site-header-title, .site-header-links {
-    font: bold 2rem $head-font-stack;
-    margin: auto 0px;
-  }
+  .site-header-container {
+    margin: 0;
 
-  .site-header-title {
-    @include set_color_and_hover($highlight-color);
+    .site-header-title, .site-header-links {
+      font: bold 2em $site-font-stack-head;
+      margin: auto 0px;
+    }
 
-    font-size: 2.75rem;
+    .site-header-title {
+      font-size: 2.75em;
+    }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .site-header-subtitle {
+      font-family: $site-font-stack-base;
+    }
+
+    @include set_color_and_hover($site-color-highlight);
+
+    @include media(medium) {
+      margin: 0 ($default-gap-thin + px);
     }
   }
 
-  .site-header-subtitle {
-    @include set_color_and_hover($highlight-color);
-
-    font: 1rem $base-font-stack;
+  @include media(medium) {
+    font-size: $header-font-size-medium;
   }
 }

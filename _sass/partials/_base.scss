@@ -1,9 +1,26 @@
-$site-max-width: 1100;
-$site-border-thickness: 1;
+/* Vars-Required-From:
+ *   Nil
+ *
+ * Vars-Set-From:
+ *   Nil
+ */
 
-$default-color-delta-amount: 15%;
-$default-large-color-delta-amount: 25%;
-$default-slight-color-delta-amount: 2.5%;
+$default-border-thickness: 1;
+
+$default-gap-thin: 2;
+$default-gap-medium: 4;
+$default-gap-thick: 8;
+
+$default-color-delta-huge-amount: 0.5;
+$default-color-delta-huge-percent: 50%;
+$default-color-delta-large-amount: 0.25;
+$default-color-delta-large-percent: 25%;
+$default-color-delta-medium-amount: 0.15;
+$default-color-delta-medium-percent: 15%;
+$default-color-delta-slight-amount: 0.04;
+$default-color-delta-slight-percent: 4%;
+
+$site-max-width: 1100;
 
 @function headings($from: 1, $to: 6) {
   @if $from == $to {
@@ -11,18 +28,6 @@ $default-slight-color-delta-amount: 2.5%;
   }
   @else {
     @return "h#{$from}," + headings($from + 1, $to);
-  }
-}
-
-@mixin set_color_and_hover($color, $color-attrib: color, $factor: $default-color-delta-amount) {
-  #{$color-attrib}: $color;
-
-  @if $site-hover-light == enabled {
-    transition: $color-attrib 0.2s ease;
-
-    &:hover, &:focus {
-      #{$color-attrib}: lighten($color, $factor);
-    }
   }
 }
 
@@ -49,7 +54,57 @@ $default-slight-color-delta-amount: 2.5%;
   }
 }
 
-/* Initializations */
+@mixin set_color_and_hover($color, $color-attrib: color, $factor: $default-color-delta-medium-percent) {
+  #{$color-attrib}: $color;
+
+  @if $site-hover-light == enabled {
+    transition: $color-attrib 0.2s ease;
+
+    &:hover, &:focus {
+      #{$color-attrib}: lighten($color, $factor);
+    }
+  }
+}
+
+@mixin set_heading_font_sizes($start: 2, $step: 0.9) {
+  @for $i from 1 through 6 {
+    $start: $start * $step;
+
+    h#{$i} {
+      font-size: $start + rem;
+    }
+  }
+}
+
+@mixin make_site_color_faded($amount, $colors) {
+  @each $name, $code in $colors {
+    .site-color-faded-#{$name} {
+      color: fade-out($code, $amount);
+    }
+  }
+}
+
+@mixin make_text_align_classes($media: (small, medium, large, xlarge)) {
+  @each $med in $media {
+    .text-align-left-#{$med} {
+      text-align: center;
+
+      @include media($med) {
+        text-align: left;
+      }
+    }
+
+    .text-align-right-#{$med} {
+      text-align: center;
+
+      @include media($med) {
+        text-align: right;
+      }
+    }
+  }
+}
+
+/* Default values for uninitialized variables */
 
 $site-sidebar-width: 0;
 $site-sidebar-border-width: 0;
@@ -57,6 +112,7 @@ $site-sidebar-border-width: 0;
 $site-header-vspace: 0;
 $site-header-vspace-small-screen: 0;
 $site-header-vspace-medium-screen: 0;
+
 $site-footer-vspace: 0;
 $site-footer-vspace-small-screen: 0;
 $site-footer-vspace-medium-screen: 0;

@@ -1,15 +1,30 @@
-$site-footer-border-height: $site-border-thickness;
+/* Vars-Required-From:
+ *   . base
+ *
+ * Vars-Set-From:
+ *   Nil
+ */
+
+$footer-border-height: $default-border-thickness;
 
 .site-footer {
-  background-color: $background-color;
+  background-color: $site-color-background;
+
+  // TODO: Cross-browser support
+  border-width: ($footer-border-height + px) 0 0 0;
+  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge-amount) 10%, fade-out($site-color-highlight, $default-color-delta-huge-amount) 90%, rgba(0, 0, 0, 0)) 100% 0 0 0 stretch;
   bottom: 0px;
   font-size: 0.7rem;
   max-width: inherit;
-  padding-top: 1px;
+  padding-bottom: $default-gap-thin + px;
   width: 100%;
   z-index: 1;
 
-  // TODO: Cross-browser support
-  border-width: ($site-footer-border-height + px) 0 0 0;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), $highlight-color, rgba(0, 0, 0, 0)) 100% 0 0 0 stretch;
+  .site-footer-container {
+    margin: 0;
+
+    @include media(small) {
+      margin: 0 ($default-gap-thin + px);
+    }
+  }
 }

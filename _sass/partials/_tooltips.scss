@@ -5,11 +5,11 @@
   }
 
   .tooltip:hover:after, .tooltip-down:hover:after, .tooltip-img-down:hover:after {
-    background: fade-out($foreground-color, 0.1);
+    background: fade-out($site-color-foreground, 0.1);
     border-radius: 5px;
-    color: $background-color;
+    color: $site-color-background;
     content: attr(data);
-    font: 0.8rem $head-font-stack;
+    font: 0.8rem $site-font-stack-head;
     left: -25%;
     padding: 5px 10px;
     position: absolute;
@@ -33,7 +33,7 @@
 
   .tooltip:hover:before, .tooltip-down:hover:before, .tooltip-img-down:hover:before {
     border: solid;
-    border-color: fade-out($foreground-color, 0.1) transparent;
+    border-color: fade-out($site-color-foreground, 0.1) transparent;
     content: "";
     left: 50%;
     position: absolute;
