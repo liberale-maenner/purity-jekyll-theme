@@ -38,16 +38,7 @@
 }
 
 .site-container {
-  @include media(medium) {
-    @if $site-sidebar-side == right {
-      margin-right: $site-sidebar-width + $site-sidebar-border-width + $default-gap-thick + px;
-    }
-    @else {
-      margin-left: $site-sidebar-width + $site-sidebar-border-width + $default-gap-thick + px;
-    }
-  }
-
-
+  box-sizing: border-box;
   margin: 0 0 ($default-gap-medium + px) 0;
   width: 100%;
 
@@ -57,5 +48,14 @@
 
   li {
     margin: 0.2em 0;
+  }
+
+  @include media(medium) {
+    @if $site-sidebar-side == right {
+      padding-right: $site-sidebar-width + $site-sidebar-border-width + $default-gap-thick + px;
+    }
+    @else {
+      padding-left: $site-sidebar-width + $site-sidebar-border-width + $default-gap-thick + px;
+    }
   }
 }

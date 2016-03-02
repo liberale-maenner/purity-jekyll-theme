@@ -14,8 +14,9 @@ $header-font-size-medium: 1rem;
   background-color: $site-color-background;
 
   // TODO: Cross-browser support
+  border-bottom: ($header-border-height + px) solid fade-out($site-color-highlight, $default-color-delta-huge / 100);
+  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge / 100) 10%, fade-out($site-color-highlight, $default-color-delta-huge / 100) 90%, rgba(0, 0, 0, 0)) 0 0 100% 0 stretch;
   border-width: 0 0 ($header-border-height + px) 0;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge-amount) 10%, fade-out($site-color-highlight, $default-color-delta-huge-amount) 90%, rgba(0, 0, 0, 0)) 0 0 100% 0 stretch;
   font-size: $header-font-size;
   max-width: inherit;
   top: 0px;
@@ -25,12 +26,17 @@ $header-font-size-medium: 1rem;
   .site-header-container {
     margin: 0;
 
+    * {
+      vertical-align: middle;
+    }
+
     .site-header-title, .site-header-links {
       font: bold 2em $site-font-stack-head;
       margin: auto 0px;
     }
 
     .site-header-title {
+      color: inherit;
       font-size: 2.75em;
     }
 

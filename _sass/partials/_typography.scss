@@ -22,14 +22,12 @@ a {
   font-weight: bold;
 }
 
-@include set_heading_font_sizes;
+@include set_heading_font_sizes();
 
-@include make_text_align_classes;
+@include make_text_align_classes();
 
 .page-icon {
-  padding: ($default-gap-thin + px) 0;
-  color: $site-color-background;
-  background-color: $site-color-foreground;
+  color: lighten($site-color-foreground, $default-color-delta-medium);
 }
 
 .text-align-center {

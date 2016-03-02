@@ -7,18 +7,16 @@
 
 $default-border-thickness: 1;
 
+$default-color-delta-huge: 50;
+$default-color-delta-large: 25;
+$default-color-delta-medium: 15;
+$default-color-delta-slight: 4;
+
+$default-delay-small: 0.15;
+
 $default-gap-thin: 2;
 $default-gap-medium: 4;
 $default-gap-thick: 8;
-
-$default-color-delta-huge-amount: 0.5;
-$default-color-delta-huge-percent: 50%;
-$default-color-delta-large-amount: 0.25;
-$default-color-delta-large-percent: 25%;
-$default-color-delta-medium-amount: 0.15;
-$default-color-delta-medium-percent: 15%;
-$default-color-delta-slight-amount: 0.04;
-$default-color-delta-slight-percent: 4%;
 
 $site-max-width: 1100;
 
@@ -54,11 +52,11 @@ $site-max-width: 1100;
   }
 }
 
-@mixin set_color_and_hover($color, $color-attrib: color, $factor: $default-color-delta-medium-percent) {
+@mixin set_color_and_hover($color, $color-attrib: color, $factor: percentage($default-color-delta-medium / 100)) {
   #{$color-attrib}: $color;
 
   @if $site-hover-light == enabled {
-    transition: $color-attrib 0.2s ease;
+    transition: $color-attrib ($default-delay-small + s) ease;
 
     &:hover, &:focus {
       #{$color-attrib}: lighten($color, $factor);

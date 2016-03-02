@@ -11,8 +11,9 @@ $footer-border-height: $default-border-thickness;
   background-color: $site-color-background;
 
   // TODO: Cross-browser support
+  border-top: ($footer-border-height + px) solid $site-color-highlight;
+  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge / 100) 10%, fade-out($site-color-highlight, $default-color-delta-huge / 100) 90%, rgba(0, 0, 0, 0)) 100% 0 0 0 stretch;
   border-width: ($footer-border-height + px) 0 0 0;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge-amount) 10%, fade-out($site-color-highlight, $default-color-delta-huge-amount) 90%, rgba(0, 0, 0, 0)) 100% 0 0 0 stretch;
   bottom: 0px;
   font-size: 0.7rem;
   max-width: inherit;
