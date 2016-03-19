@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  {% include head.html %}
+  <head>
+    {% include head.html %}
+
+    <!-- Page-specific CSS -->
+    {% for sheet in page.css %}
+      <link rel='stylesheet' href='{{ site.baseurl }}/assets/css/{{ sheet }}.css'>
+    {% endfor %}
+  </head>
   <body>
     <div class='layout'>
       {% include sections/header.html %}

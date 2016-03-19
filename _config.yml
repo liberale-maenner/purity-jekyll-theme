@@ -17,6 +17,7 @@ url:     http://saswatpadhi.github.io
 baseurl: /purity-jekyll-theme
 
 title:    Purity
+tagline:  A clean, simple theme for Jekyll                             #Optional
 timezone: America/Los_Angeles
 
 author:
