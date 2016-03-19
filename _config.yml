@@ -60,12 +60,34 @@ layout:
   sidebar:
     style: right
 
-menu:
+topmenu:
+  GitHub:
+    Purity:
+      url:   https://github.com/SaswatPadhi/purity-jekyll-theme
+      title: 'Purity on GitHub'
+      icon:  github
+    Fork:
+      url:   https://github.com/SaswatPadhi/purity-jekyll-theme#fork-destination-box
+      title: 'Fork Purity'
+      icon:  code-fork
+  Download:
+    Zip:
+      url:   https://github.com/SaswatPadhi/purity-jekyll-theme/archive/master.zip
+      title: 'Download zip source'
+      icon:  download
+  Author:
+    padhi:
+      url:   http://saswatpadhi.github.io
+      title: '@SaswatPadhi on GitHub'
+      icon:  user
+  Test Pages:
+    headings_test:
+      local: tests/headings.md
+
+sidemenu:
   Test Pages:
     code_test:
       local: tests/code.md
-    headings_test:
-      local: tests/headings.md
   Links:
     github:
       url:   https://github.com

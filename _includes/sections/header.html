@@ -10,21 +10,33 @@
       </div>
 
       <div class='pure-u-1-1 pure-u-md-1-2 site-header-links text-align-right-medium'>
-        <a class='tooltip-down' data='Fork: {{ site.github.repo }}' href='https://github.com/{{ site.github.user }}/{{ site.github.repo }}#fork-destination-box'>
-          <i class='fa fa-code-fork'></i>
-        </a>
-        &nbsp;
-        <a class='tooltip-down' data='{{ site.github.user}}/{{ site.github.repo }}' href='https://github.com/{{ site.github.user }}/{{ site.github.repo }}'>
-          <i class='fa fa-github'></i>
-        </a>
-        &nbsp; &middot; &nbsp;
-        <a class='tooltip-down' data='Download' href='https://github.com/{{ site.github.user }}/{{ site.github.repo }}/archive/master.zip'>
-          <i class='fa fa-download'></i>
-        </a>
-        &nbsp; &middot; &nbsp;
-        <a class='tooltip-down' data='GitHub: {{ site.github.user }}' href='https://github.com/{{ site.github.user }}'>
-          <i class='fa fa-user'></i>
-        </a>
+        {% assign no_links_yet = true %}
+        {% for link_group in site.topmenu %}
+          {% if no_links_yet != true %}&nbsp;&middot;&nbsp;{% endif %}
+          {% assign no_links_yet = false %}
+          {% for link in link_group[1] %}
+            {% comment %} TODO: Optimize stupid linear search? {% endcomment %}
+            {% if link[1].local %}
+              {% for page in site.pages %}
+                {% if page.path == link[1].local %}
+                  <a class='tooltip-down' data='{{ page.title }}'
+                     href='{{ site.baseurl }}{{ page.url }}'>
+                    {% if page.icon %}
+                      <i class='fa fa-fw fa-{{ page.icon }}'></i>
+                    {% endif %}
+                  </a>
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              <a class='tooltip-down' data='{{ link[1].title }}'
+                 href='{{ link[1].url }}'>
+                {% if link[1].icon %}
+                  <i class='fa fa-fw fa-{{ link[1].icon }}'></i>
+                {% endif %}
+              </a>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
       </div>
 
     </div>
