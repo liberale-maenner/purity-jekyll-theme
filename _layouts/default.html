@@ -6,7 +6,7 @@
       {% include sections/header.html %}
 
       <div id='site-main' class='pure-g site-main'>
-        {% assign site-sidebar-side = site.layout.sidebar.side | default: 'left' %}
+        {% assign site-sidebar-side = site.layout.sidebar.style | default: 'left' %}
         {% if site-sidebar-side == 'left' %}
           {% include sections/sidebar.html %}
         {% endif %}

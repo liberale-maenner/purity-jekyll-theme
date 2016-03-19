@@ -7,8 +7,8 @@
 
 $header-border-height: $default-border-thickness;
 
-$header-font-size: 0.8rem;
-$header-font-size-medium: 1rem;
+$header-font-size: 0.7rem;
+$header-font-size-medium: 0.9rem;
 
 .site-header {
   background-color: $site-color-background;
@@ -30,9 +30,18 @@ $header-font-size-medium: 1rem;
       vertical-align: middle;
     }
 
-    .site-header-title, .site-header-links {
+    .site-header-title {
       font: bold 2em $site-font-stack-head;
       margin: auto 0px;
+    }
+
+    .site-header-links {
+      font: bold 1.75em $site-font-stack-head;
+      margin: auto 0px;
+
+      @include media(medium) {
+        font-size: 2em;
+      }
     }
 
     .site-header-title {

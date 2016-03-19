@@ -48,18 +48,17 @@ github:
 #
 # layout:
 #   header:
-#     enabled: true
-#     scroll:  false
+#     style: scroll # (can be: scroll | fixed | disabled)
 #   footer:
-#     enabled: true
-#     scroll:  false
+#     style: scroll # (can be: scroll | fixed | disabled)
 #   sidebar:
-#     enabled: true
-#     side:    left
+#     style: left   # (can be: left | right | disabled)
 
 layout:
+  header:
+    style: fixed
   sidebar:
-    side: right
+    style: right
 
 menu:
   Test Pages:
