@@ -6,17 +6,6 @@
     <input type='checkbox' id='reveal-sidebar-checkbox' role='button'>
 
     <div class='sidebar-contents'>
-      {% if site.author.photo %}
-        <a class='tooltip-img-down' href='{{ site.author.link }}' data='Yep, That&#39;s me!'>
-          {% if site.author.photo.local %}
-            {% assign photo_url = site.baseurl | append: '/' | append: site.author.photo.local %}
-          {% else %}
-            {% assign photo_url = site.author.photo.remote %}
-          {% endif %}
-          <img class='sidebar-author-photo' alt='{{ site.author.photo.alt }}' src='{{ photo_url }}'/>
-        </a>
-      {% endif %}
-
       <div class='vertical-menu'>
         <ul class='menu-list'>
 

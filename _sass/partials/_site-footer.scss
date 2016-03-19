@@ -9,23 +9,19 @@ $footer-border-height: $default-border-thickness;
 
 .site-footer {
   background-color: $site-color-background;
-
-  // TODO: Cross-browser support
-  border-top: ($footer-border-height + px) solid $site-color-highlight;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge / 100) 10%, fade-out($site-color-highlight, $default-color-delta-huge / 100) 90%, rgba(0, 0, 0, 0)) 100% 0 0 0 stretch;
-  border-width: ($footer-border-height + px) 0 0 0;
+  border-top: ($footer-border-height + px) solid fade-out($site-color-highlight, $default-color-delta-huge / 100);
   bottom: 0px;
-  font-size: 0.7rem;
+  font-size: 0.725rem;
   max-width: inherit;
-  padding-bottom: $default-gap-thin + px;
   width: 100%;
   z-index: 1;
 
   .site-footer-container {
     margin: 0;
+    padding-top: 1px;
 
     @include media(small) {
-      margin: 0 ($default-gap-thin + px);
+      margin: 0 ($default-gap-medium + px);
     }
   }
 }

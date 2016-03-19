@@ -29,27 +29,16 @@ $sidebar-font-size-hidden: 0.85rem;
   right: 0;
   text-align: center;
 
-  .sidebar-author-photo {
-    width: 80%;
-  }
-
   .sidebar-note {
     font-size: 0.7em;
   }
 
   @include media(medium) {
     right: auto;
+    border: none;
 
     @if $site-sidebar-side == "right" {
       margin-left: -$sidebar-width - $sidebar-border-width + px;
-      border-image: linear-gradient(to top, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge / 100) 10%) 0 0 0 100% stretch;
-      border-left: ($sidebar-border-width + px) solid $site-color-highlight;
-      border-width: 0 0 0 ($sidebar-border-width + px);
-    }
-    @else {
-      border-image: linear-gradient(to top, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge / 100) 10%) 0 100% 0 0 stretch;
-      border-right: ($sidebar-border-width + px) solid $site-color-highlight;
-      border-width: 0 ($sidebar-border-width + px) 0 0;
     }
 
     font-size: $sidebar-font-size;

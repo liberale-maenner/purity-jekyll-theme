@@ -22,10 +22,14 @@
     }
 
     .menu-item {
-      margin: 0.125em 0;
+      margin: 0.25em 0;
 
       .menu-link {
         @include set_color_and_hover($site-color-accent);
+      }
+
+      @include media(medium) {
+        margin: 0.3em 0;
       }
     }
 

@@ -16,10 +16,10 @@ $site-font-stack-mono: '{{ mono_font }}', monospace;
 
 /* Pass information from Jekyll to SASS */
 
+$site-tagline: {{ site.tagline | default: '' | size }};
 $site-tooltips: {{ site.theme.tooltips | default: 'enabled' }};
 $site-hover-light: {{ site.theme.hover_light | default: 'enabled' }};
 $site-sidebar-side: {{ site.layout.sidebar.style | default: 'left' }};
-
 
 /* Now load rest of the modules -- @import order matters!! */
 

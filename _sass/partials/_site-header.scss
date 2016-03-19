@@ -7,18 +7,15 @@
 
 $header-border-height: $default-border-thickness;
 
-$header-font-size: 0.7rem;
-$header-font-size-medium: 0.9rem;
+$header-font-size: 1.75rem;
+$header-font-size-medium: 2rem;
 
 .site-header {
   background-color: $site-color-background;
-
-  // TODO: Cross-browser support
   border-bottom: ($header-border-height + px) solid fade-out($site-color-highlight, $default-color-delta-huge / 100);
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0), fade-out($site-color-highlight, $default-color-delta-huge / 100) 10%, fade-out($site-color-highlight, $default-color-delta-huge / 100) 90%, rgba(0, 0, 0, 0)) 0 0 100% 0 stretch;
-  border-width: 0 0 ($header-border-height + px) 0;
   font-size: $header-font-size;
   max-width: inherit;
+  padding-bottom: ($default-gap-medium + px);
   top: 0px;
   width: 100%;
   z-index: 1;
@@ -31,32 +28,29 @@ $header-font-size-medium: 0.9rem;
     }
 
     .site-header-title {
-      font: bold 2em $site-font-stack-head;
+      color: inherit;
+      font: bold 1.25em $site-font-stack-head;
       margin: auto 0px;
     }
 
     .site-header-links {
-      font: bold 1.75em $site-font-stack-head;
+      font: bold 0.75em $site-font-stack-head;
       margin: auto 0px;
 
       @include media(medium) {
-        font-size: 2em;
+        font-size: 0.9em;
       }
-    }
-
-    .site-header-title {
-      color: inherit;
-      font-size: 2.75em;
     }
 
     .site-header-subtitle {
       font-family: $site-font-stack-base;
+      font-size: 0.55em;
     }
 
     @include set_color_and_hover($site-color-highlight);
 
     @include media(medium) {
-      margin: 0 ($default-gap-thin + px);
+      margin: 0 ($default-gap-medium + px);
     }
   }
 

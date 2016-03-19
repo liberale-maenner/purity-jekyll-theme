@@ -8,10 +8,15 @@
 @import "partials/site-header";
 
 // TODO: Verify / Calculate
-$header-height: 89;
-$header-height-medium-screen: 76;
+$header-height: 85;
+$header-height-medium-screen: 78;
+@if $site-tagline == 0 {
+  $header-height: 66;
+  $header-height-medium-screen: 55;
+}
 
 .site-header {
+  padding-bottom: 0px;
   position: fixed;
   height: $header-height + px;
 
