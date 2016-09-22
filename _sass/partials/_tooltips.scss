@@ -8,7 +8,7 @@
     background: fade-out($site-color-foreground, $default-color-delta-medium / 100);
     border-radius: 5px;
     color: $site-color-background;
-    content: attr(data);
+    content: attr(data-tooltip);
     font: 0.8rem $site-font-stack-head;
     left: -25%;
     padding: 5px 10px;

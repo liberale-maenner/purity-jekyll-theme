@@ -19,7 +19,7 @@
             {% if link[1].local %}
               {% for page in site.pages %}
                 {% if page.path == link[1].local %}
-                  <a class='tooltip-down' data='{{ page.title }}'
+                  <a class='tooltip-down' data-tooltip='{{ page.title }}'
                      href='{{ site.baseurl }}{{ page.url }}'>
                     {% if page.icon %}
                       <i class='fa fa-fw fa-{{ page.icon }}'></i>
@@ -28,7 +28,7 @@
                 {% endif %}
               {% endfor %}
             {% else %}
-              <a class='tooltip-down' data='{{ link[1].title }}'
+              <a class='tooltip-down' data-tooltip='{{ link[1].title }}'
                  href='{{ link[1].url }}'>
                 {% if link[1].icon %}
                   <i class='fa fa-fw fa-{{ link[1].icon }}'></i>

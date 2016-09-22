@@ -26,7 +26,7 @@ Still not convinced:
   - [normalize.css][normalize] base
   - [Pure][pure]'s grid system
   - Awesomified by [FontAwesome][fontawesome]
-  - CSS-only tooltips, like [this](){: .tooltip data='This is super-cool!'}.
+  - CSS-only tooltips, like [this](){: .tooltip data-tooltip='This is super-cool!'}.
   - Oh, and [Purity][purity]'s CSS is 100% [SASS][sass]y
 - Configurable to the core: ([`_config.yml`][config_yml])
   - Toggle header, footer, sidebar
