@@ -38,7 +38,7 @@ $sidebar-font-size-hidden: 0.85rem;
     border: none;
 
     @if $site-sidebar-side == "right" {
-      margin-left: -$sidebar-width - $sidebar-border-width + px;
+      margin-left: $site-max-width - $sidebar-width - $sidebar-border-width + px;
     }
 
     font-size: $sidebar-font-size;
