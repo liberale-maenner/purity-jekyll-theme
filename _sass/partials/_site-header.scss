@@ -37,7 +37,7 @@ $header-font-size-medium: 1.5rem;
       font: bold 1em $site-font-stack-head;
       margin: auto 0px;
 
-      @include media(medium) {
+      @include media(large) {
         font-size: 1.2em;
       }
     }
