@@ -34,11 +34,15 @@ $header-font-size-medium: 1.5rem;
     }
 
     .site-header-links {
-      font: bold 1em $site-font-stack-head;
       margin: auto 0px;
 
-      @include media(large) {
-        font-size: 1.2em;
+      font: bold 1em $site-font-stack-head;
+      @include media(medium) {
+        @if $site-tagline == 0 {
+          font-size: 1.2em;
+        } @else {
+          font-size: 1.4em;
+        }
       }
     }
 

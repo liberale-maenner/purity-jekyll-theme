@@ -64,8 +64,8 @@ topmenu:
   GitHub:
     Purity:
       url:   https://github.com/SaswatPadhi/purity-jekyll-theme
-      title: 'Purity on GitHub'
-      icon:  github
+      title: 'Purity repo on GitHub'
+      icon:  git
     Fork:
       url:   https://github.com/SaswatPadhi/purity-jekyll-theme#fork-destination-box
       title: 'Fork Purity'
@@ -79,7 +79,7 @@ topmenu:
     padhi:
       url:   http://saswatpadhi.github.io
       title: '@SaswatPadhi on GitHub'
-      icon:  user
+      icon:  github-alt
   Test Pages:
     headings_test:
       local: tests/headings.md
@@ -89,6 +89,12 @@ sidemenu:
     code_test:
       local: tests/code.md
   Links:
+    personal:
+      url:   /
+      title: My website
+      icon:  user
+    split_1:
+      type:  spacer
     github:
       url:   https://github.com
       title: GitHub
@@ -97,8 +103,8 @@ sidemenu:
       url:   https://bitbucket.com
       title: BitBucket
       icon:  bitbucket
-    split_1:
-      type: spacer
+    split_2:
+      type:  separator
     google:
       url:   https://google.com
       title: Google
@@ -107,13 +113,13 @@ sidemenu:
       url:   https://microsoft.com
       title: Microsoft
       icon:  windows
-    split_2:
-      type: separator
+    split_3:
+      type:  separator
     html5:
       url:   https://en.wikipedia.org/wiki/HTML5
-      title: HTML5 [Wikipedia]
+      title: HTML5 (Wiki)
       icon:  html5
     css:
       url:   https://en.wikipedia.org/wiki/Cascading_Style_Sheets
-      title: CSS [Wikipedia]
+      title: CSS (Wiki)
       icon:  css3
