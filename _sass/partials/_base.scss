@@ -31,24 +31,16 @@ $site-max-width: 976;
 
 @mixin media($size: small) {
   @if $size == small {
-    @media screen and (min-width: 35.5em) {
-      @content;
-    }
+    @media screen and (min-width: 35.5em) { @content; }
   }
   @else if $size == medium {
-    @media screen and (min-width: 48em) {
-      @content;
-    }
+    @media screen and (min-width: 48em) { @content; }
   }
   @else if $size == large {
-    @media screen and (min-width: 64em) {
-      @content;
-    }
+    @media screen and (min-width: 64em) { @content; }
   }
   @else if $size == xlarge {
-    @media screen and (min-width: 80em) {
-      @content;
-    }
+    @media screen and (min-width: 80em) { @content; }
   }
 }
 
@@ -82,23 +74,20 @@ $site-max-width: 976;
   }
 }
 
-@mixin make_text_align_classes($media: (small, medium, large, xlarge)) {
-  @each $med in $media {
-    .text-align-left-#{$med} {
-      text-align: center;
+@each $med in (small, medium, large, xlarge) {
+  .visible-at-#{$med} {
+    display: none;
+    @include media($med) { display: initial; }
+  }
 
-      @include media($med) {
-        text-align: left;
-      }
-    }
+  .text-align-left-#{$med} {
+    text-align: center;
+    @include media($med) { text-align: left; }
+  }
 
-    .text-align-right-#{$med} {
-      text-align: center;
-
-      @include media($med) {
-        text-align: right;
-      }
-    }
+  .text-align-right-#{$med} {
+    text-align: center;
+    @include media($med) { text-align: right; }
   }
 }
 

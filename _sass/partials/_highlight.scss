@@ -8,6 +8,10 @@
 .highlighter-rouge {
   @include set_color_and_hover(darken($site-color-background, percentage($default-color-delta-slight/100)), background-color);
 
+  .highlight {
+    padding: 6px;
+  }
+
   color: #586e75;
 
   table td {

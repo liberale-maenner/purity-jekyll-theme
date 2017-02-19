@@ -1,6 +1,6 @@
 ---
 layout: page
-icon: header
+icon: hashtag
 title: Headings Test
 ---
 
@@ -15,3 +15,5 @@ title: Headings Test
 ##### Heading 5
 
 ###### Heading 6
+
+Normal text

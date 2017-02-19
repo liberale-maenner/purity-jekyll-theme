@@ -27,8 +27,6 @@ a {
 
 @include set_heading_font_sizes();
 
-@include make_text_align_classes();
-
 .page-icon {
   color: lighten($site-color-foreground, $default-color-delta-medium);
 }

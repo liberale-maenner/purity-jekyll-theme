@@ -1,23 +1,10 @@
-<title>
-  {% if page.title == 'Home' %}
-    {% if site.tagline %}
-      {{ site.title }} &middot; {{ site.tagline }}
-    {% else %}
-      {{ site.title }}
-    {% endif %}
+<title>{% if page.title == 'Home' %}
+    {% if site.tagline %} {{ site.title }} &middot; {{ site.tagline }} {% else %} {{ site.title }} {% endif %}
   {% else %}
     {{ page.title }} &raquo; {{ site.title }}
-  {% endif %}
-</title>
+  {% endif %}</title>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
 
-<!-- Theme CSS -->
 <link rel='stylesheet' href='{{ site.baseurl }}/assets/css/purity.css'>
-
-<!-- RSS
-<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
--->
-
-<!-- Look ma, no JS! -->

@@ -33,21 +33,6 @@ $sidebar-font-size-hidden: 0.85rem;
     font-size: 0.7em;
   }
 
-  @include media(medium) {
-    right: auto;
-    border: none;
-
-    @if $site-sidebar-side == "right" {
-      margin-left: $site-max-width - $sidebar-width - $sidebar-border-width + px;
-    }
-
-    font-size: $sidebar-font-size;
-    padding: 0;
-    width: $sidebar-width + px;
-  }
-}
-
-.site-sidebar {
   .reveal-sidebar {
     @include set_color_and_hover($site-color-accent, color);
 
@@ -66,8 +51,19 @@ $sidebar-font-size-hidden: 0.85rem;
     display: block;
     width: $sidebar-width-hidden + px;
   }
+}
 
+.site-sidebar {
   @include media(medium) {
+    width: $sidebar-width + px;
+    font-size: $sidebar-font-size;
+    border: none;
+    padding: 0;
+
+    @if $site-sidebar-side == "left" {
+      right: auto;
+    }
+
     .reveal-sidebar {
       display: none;
     }
